@@ -1,0 +1,382 @@
+[
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.CardModule\u002B\u003C\u003Ec",
+    "Method": "\u003CCardEndpoints\u003Eb__0_0",
+    "RelativePath": "api/cards",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.CardModule\u002B\u003C\u003Ec",
+    "Method": "\u003CCardEndpoints\u003Eb__0_2",
+    "RelativePath": "api/cards",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "card",
+        "Type": "FinanceManagerBackend.Models.Card",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.CardModule\u002B\u003C\u003Ec",
+    "Method": "\u003CCardEndpoints\u003Eb__0_1",
+    "RelativePath": "api/cards/{cardId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.CardModule\u002B\u003C\u003Ec",
+    "Method": "\u003CCardEndpoints\u003Eb__0_3",
+    "RelativePath": "api/cards/{cardId}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cardData",
+        "Type": "FinanceManagerBackend.Models.Card",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.CardModule\u002B\u003C\u003Ec",
+    "Method": "\u003CCardEndpoints\u003Eb__0_4",
+    "RelativePath": "api/cards/{cardId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_0",
+    "RelativePath": "api/cards/{cardId}/transactions",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_2",
+    "RelativePath": "api/cards/{cardId}/transactions",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "transaction",
+        "Type": "FinanceManagerBackend.Models.Transaction",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_1",
+    "RelativePath": "api/cards/{cardId}/transactions/{transactionId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_3",
+    "RelativePath": "api/cards/{cardId}/transactions/{transactionId}",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "transactionData",
+        "Type": "FinanceManagerBackend.Models.Transaction",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_4",
+    "RelativePath": "api/cards/{cardId}/transactions/{transactionId}",
+    "HttpMethod": "DELETE",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "transactionId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_6",
+    "RelativePath": "api/cards/{cardId}/transactions/amount/{amountType}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "amountType",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.TransactionModule\u002B\u003C\u003Ec",
+    "Method": "\u003CTransactionEndpoints\u003Eb__0_5",
+    "RelativePath": "api/cards/{cardId}/transactions/category/{categoryTransaction}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cardId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "categoryTransaction",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.AuthModule\u002B\u003C\u003Ec",
+    "Method": "\u003CAuthEndpoints\u003Eb__1_0",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "FinanceManagerBackend.Modules.AuthModule\u002BLoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.AuthModule\u002B\u003C\u003Ec",
+    "Method": "\u003CAuthEndpoints\u003Eb__1_1",
+    "RelativePath": "api/register",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "FinanceManagerBackend.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.UserModule\u002B\u003C\u003Ec",
+    "Method": "\u003CUserEndpoints\u003Eb__0_0",
+    "RelativePath": "api/user/me",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FinanceManagerBackend.Modules.UserModule\u002B\u003C\u003Ec",
+    "Method": "\u003CUserEndpoints\u003Eb__0_1",
+    "RelativePath": "api/user/me",
+    "HttpMethod": "PUT",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userData",
+        "Type": "FinanceManagerBackend.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
