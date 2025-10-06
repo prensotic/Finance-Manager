@@ -24,7 +24,12 @@ namespace FinanceManagerBackend.Modules
             app.MapPut("/api/user/me", [Authorize] async (User userData, [FromServices] ApplicationContext db, HttpContext context) =>
             {
                 var currentUserId = context.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                
+                Console.WriteLine(currentUserId);
+
                 if (string.IsNullOrEmpty(currentUserId)) return Results.Unauthorized();
+
+                
 
                 User? user = await db.Users.FirstOrDefaultAsync(u => u.Id == currentUserId);
 

@@ -1,0 +1,57 @@
+.profile_section{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.profile_content{
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+}
+
+.profile_user_icon{
+  height: 200px;
+}
+
+.personal_data{
+  width: 500px;
+  display: grid;
+  grid-template-rows: 33% 33% 34%;
+  gap: 10px;
+  background: #ecffdf;
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.personal_data_one{
+  display: grid;
+  font-weight: bold;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+}
+
+.personal_data_two{
+  display: grid;
+  font-weight: bold;
+  grid-template-columns: 50% 50%;
+  gap: 20px;
+}
+
+.personal_data_three{
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_buttons{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 20px;
+}

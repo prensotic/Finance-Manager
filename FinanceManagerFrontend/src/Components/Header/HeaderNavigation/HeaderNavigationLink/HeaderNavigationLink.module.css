@@ -5,3 +5,12 @@
 .link_default{
   color: #1d1d1d;
 }
+
+a{
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover{
+  color: #f59211;
+}

@@ -22,7 +22,7 @@ export function Header() {
         <h2 className={styles.header_title}>Finance Manager</h2>
         <HeaderNavigation />
         <div>
-          {token ? <Button>Профиль</Button> : <Button onClick={()=> navigate("/auth/login")}>Войти</Button>}
+          {token ? <Button onClick={() => navigate("/profile")}>Профиль</Button> : <Button onClick={()=> navigate("/auth/login")}>Войти</Button>}
         </div>
       </div>
     </header>

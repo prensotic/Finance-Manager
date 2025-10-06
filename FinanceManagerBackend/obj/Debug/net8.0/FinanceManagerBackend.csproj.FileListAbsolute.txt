@@ -74,3 +74,4 @@ D:\4курс\практика (производственная) осень 2025
 D:\4курс\практика (производственная) осень 2025\Finance Manager\FinanceManagerBackend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\4курс\практика (производственная) осень 2025\Finance Manager\FinanceManagerBackend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\4курс\практика (производственная) осень 2025\Finance Manager\FinanceManagerBackend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\4курс\практика (производственная) осень 2025\Finance Manager\FinanceManagerBackend\obj\Debug\net8.0\FinanceManagerBackend.sourcelink.json

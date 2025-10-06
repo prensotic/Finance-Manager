@@ -1,0 +1,10 @@
+.cards_list_empty_content{
+  text-align: center;
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+}
