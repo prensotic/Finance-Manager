@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "./CardsPage.module.css"
-import { CardsListEmpty } from "./CardsListEmpty/CardsListEmpty";
-import { CardsList } from "./CardsList/CardsList";
-import {GetCardsApi} from "../../../Api/Cards/GetCardsApi.js";
+import { CardsListEmpty } from "../../Organisms/CardsListEmpty/CardsListEmpty";
+import { CardsList } from "../../Organisms/CardsList/CardsList.jsx";
+import {GetCardsApi} from "../../../Api/Cards/GetCardsApi";
 
 export function CardsPage(){
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GetUserApi } from "../../../Api/User/GetUserApi";
 import styles from "./ProfilePage.module.css";
 import userIcon from "../../../Assets/Images/user_icon.png";
-import { Button } from "../../Button/Button";
+import { Button } from "../../Atoms/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 export function ProfilePage(){

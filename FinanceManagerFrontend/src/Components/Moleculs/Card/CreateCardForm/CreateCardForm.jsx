@@ -1,7 +1,7 @@
 import styles from "./CreateCardForm.module.css";
-import { Button } from "../../Button/Button";
-import { Input } from "../../Input/Input";
-import { GetUserApi } from "../../../Api/User/GetUserApi";
+import { Button } from "../../../Atoms/Button/Button.jsx";
+import { Input } from "../../../Atoms/Input/Input";
+import { GetUserApi } from "../../../../Api/User/GetUserApi";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

@@ -1,10 +1,10 @@
 import styles from "./RegisterForm.module.css";
-import { Input } from "../../Input/Input";
-import { Button } from "../../Button/Button";
+import {Input} from "../../../Atoms/Input/Input.jsx";
+import {Button} from "../../../Atoms/Button/Button.jsx";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SignUpApi } from "../../../Api/Auth/SignUpApi";
-import { User } from "../../../Models/User";
+import { SignUpApi } from "../../../../Api/Auth/SignUpApi";
+import { User } from "../../../../Models/User";
 
 export function RegisterForm(){
 

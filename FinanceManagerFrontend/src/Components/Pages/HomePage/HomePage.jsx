@@ -1,5 +1,5 @@
 import styles from "./HomePage.module.css";
-import {Header} from "../../Header/Header.jsx";
+import { Header } from "../../Organisms/Header/Header";
 
 export function HomePage(){
   return(

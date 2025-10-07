@@ -1,8 +1,8 @@
 import styles from "./LoginForm.module.css";
-import {Input} from "../../Input/Input.jsx"
-import { Button } from "../../Button/Button.jsx";
+import {Input} from "../../../Atoms/Input/Input.jsx";
+import {Button} from "../../../Atoms/Button/Button.jsx";
 import {useState} from "react";
-import { SignInApi } from "../../../Api/Auth/SignInApi.js";
+import { SignInApi } from "../../../../Api/Auth/SignInApi.js";
 import { useNavigate } from "react-router-dom";
 
 export function LoginForm(){

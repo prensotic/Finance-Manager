@@ -1,5 +1,5 @@
 import styles from "./HeaderNavigation.module.css";
-import {HeaderNavigationLink} from "./HeaderNavigationLink/HeaderNavigationLink.jsx";
+import {HeaderNavigationLink} from "../../Atoms/HeaderNavigationLink/HeaderNavigationLink.jsx";
 
 export function HeaderNavigation(){
   return(

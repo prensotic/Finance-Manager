@@ -1,5 +1,5 @@
 import styles from "./CreateCardPage.module.css";
-import {CreateCardForm} from "../../Cards/CreateCardForm/CreateCardForm.jsx";
+import { CreateCardForm } from "../../Moleculs/Card/CreateCardForm/CreateCardForm";
 
 export function CreateCardPage() {
   return(

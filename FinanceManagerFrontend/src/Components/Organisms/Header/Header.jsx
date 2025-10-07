@@ -1,7 +1,7 @@
 import styles from "./Header.module.css";
-import { Button } from "../Button/Button";
+import { Button } from "../../Atoms/Button/Button.jsx";
 import { useState, useEffect } from "react";
-import {HeaderNavigation} from "./HeaderNavigation/HeaderNavigation.jsx";
+import {HeaderNavigation} from "../../Moleculs/HeaderNavigation/HeaderNavigation.jsx";
 import {useNavigate} from "react-router-dom";
 
 export function Header() {

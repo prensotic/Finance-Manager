@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import {LoginForm} from "../../Auth/LoginForm/LoginForm.jsx";
-import {RegisterForm} from "../../Auth/RegisterForm/RegisterForm.jsx";
+import { LoginForm } from "../../Moleculs/Auth/LoginForm/LoginForm";
+import { RegisterForm } from "../../Moleculs/Auth/RegisterForm/RegisterForm";
 import styles from "./AuthPage.module.css";
 
 export function AuthPage(){

@@ -1,5 +1,5 @@
 import styles from "./CardsListEmpty.module.css";
-import { Button } from "../../../Button/Button";
+import { Button } from "../../Atoms/Button/Button";
 import { useNavigate } from "react-router-dom";
 
 export function CardsListEmpty(){
