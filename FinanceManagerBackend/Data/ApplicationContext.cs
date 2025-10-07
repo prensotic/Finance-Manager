@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace FinanceManagerBackend
+namespace FinanceManagerBackend.Data
 {
     public class ApplicationContext : DbContext
     {

@@ -1,6 +1,16 @@
 ﻿using FinanceManagerBackend;
+using FinanceManagerBackend.Data;
+using FinanceManagerBackend.Data.AuthRepository;
+using FinanceManagerBackend.Data.CardRepository;
+using FinanceManagerBackend.Data.TransactionRepository;
+using FinanceManagerBackend.Data.UserRepository;
+using FinanceManagerBackend.Endpoints;
 using FinanceManagerBackend.Models;
-using FinanceManagerBackend.Modules;
+using FinanceManagerBackend.Services.AuthService;
+using FinanceManagerBackend.Services.CardService;
+using FinanceManagerBackend.Services.Implementations;
+using FinanceManagerBackend.Services.Interfaces;
+using FinanceManagerBackend.Services.UserService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +20,8 @@ using Microsoft.IdentityModel.Tokens;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+
+
 
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -40,6 +52,15 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<ICardRepository, CardRepository>();
+builder.Services.AddScoped<ICardService, CardService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
 var app = builder.Build();
 
 app.UseCors("AllowVite");
@@ -47,9 +68,9 @@ app.UseCors("AllowVite");
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.AuthEndpoints();
-app.UserEndpoints();
-app.CardEndpoints();
-app.TransactionEndpoints();
+app.MapAuthEndpoints();
+app.MapCardEndpoints();
+app.MapTransactionEndpoints();
+app.MapUserEndpoints();
 
 app.Run();
