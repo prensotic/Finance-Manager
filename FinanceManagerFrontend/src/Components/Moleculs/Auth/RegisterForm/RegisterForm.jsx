@@ -11,13 +11,13 @@ export function RegisterForm(){
   const navigate = useNavigate();
 
   const [inputs, setInput] = useState({
-    firstName: "Илья",
-    lastName: "Логинов",
-    middleName: "Васильевич",
-    phoneNumber: "89877116595",
-    email: "ilya@mail.ru",
-    password: "12345",
-    confirmPassword: "12345"
+    firstName: "",
+    lastName: "",
+    middleName: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
   });
 
   const HandleFirstNameInput = (e) => {

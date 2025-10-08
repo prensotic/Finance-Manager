@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import { LoginForm } from "../../Moleculs/Auth/LoginForm/LoginForm";
 import { RegisterForm } from "../../Moleculs/Auth/RegisterForm/RegisterForm";
-import styles from "./AuthPage.module.css";
+import {AuthLayout} from "../../Templates/AuthLayout/AuthLayout.jsx";
 
 export function AuthPage(){
   const {id} = useParams();
   return(
-    <section className={styles.auth_section}>
+    <AuthLayout>
       {id == "login" ? <LoginForm /> : <RegisterForm/>}
-    </section>
+    </AuthLayout>
   );
 }

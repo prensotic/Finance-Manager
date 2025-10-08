@@ -10,8 +10,8 @@ export function LoginForm(){
   const navigate = useNavigate();
 
   const [inputs, setInput] = useState({
-    email: "ilya@mail.ru",
-    password: "12345"
+    email: "",
+    password: ""
   });
 
   const HandleEmailInput = (e) =>{
@@ -37,7 +37,7 @@ export function LoginForm(){
         navigate("/")
       }
       else{
-        alert("Ошибка сервера");
+        alert("Пользователь не найден");
       }
     }
     else{

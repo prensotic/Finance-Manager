@@ -3,7 +3,7 @@ import { SideBar } from "../../Organisms/SideBar/SideBar";
 
 export function DashboardLayout({children}){
   return(
-    <section>
+    <section className={styles.dashboard_section}>
       <SideBar />
       {children}
     </section>

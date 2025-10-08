@@ -48,7 +48,7 @@ export function ProfilePage(){
           </div>
         </div>
         <div className={styles.profile_buttons}>
-          <Button onClick={()=> navigate("/cards")}>Карты</Button>
+          <Button onClick={()=> navigate("/dashboard/cards")}>Карты</Button>
           <Button style={{"background" : "#ffa143ff"}}>Транзакции</Button>
           <Button onClick={()=> navigate("/")} style={{"background" : "#b32a25ff"}}>Вернуться на главную</Button>
         </div>

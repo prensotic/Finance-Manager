@@ -1,0 +1,7 @@
+.side_bar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  background: #f8f8f8;
+}

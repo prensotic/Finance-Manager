@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import styles from "./CardsPage.module.css"
-import { CardsListEmpty } from "../../Organisms/CardsListEmpty/CardsListEmpty";
 import { CardsList } from "../../Organisms/CardsList/CardsList.jsx";
-import {GetCardsApi} from "../../../Api/Cards/GetCardsApi";
+import {GetCardsApi} from "../../../Api/Cards/GetCardsApi.js";
+import { DashboardLayout } from "../../Templates/DashboardLayout/DashboardLayout.jsx";
+import { useParams } from "react-router-dom";
 
-export function CardsPage(){
+export function DashboardPage(){
+
+  const {dashId} = useParams();
 
   const [cards, setCards] = useState([]);
 
@@ -23,10 +25,8 @@ export function CardsPage(){
   }, []);
 
   return( 
-    <section className={styles.cards_page_section}>
-      <div className={styles.cards_page_content}>
-        {cards.length === 0 ? <CardsListEmpty /> : <CardsList cards={cards}/>}
-      </div>
-    </section>
+    <DashboardLayout>
+        {dashId == "cards" && <CardsList cards={cards}/>}
+    </DashboardLayout>
   );
 }

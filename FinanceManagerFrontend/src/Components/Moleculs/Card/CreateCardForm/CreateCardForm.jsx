@@ -4,6 +4,8 @@ import { Input } from "../../../Atoms/Input/Input";
 import { GetUserApi } from "../../../../Api/User/GetUserApi";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {CreateCardApi} from "../../../../Api/Cards/CreateCardApi.js";
+import {Card} from "../../../../Models/Card.js";
 
 export function CreateCardForm(){
 
@@ -11,6 +13,68 @@ export function CreateCardForm(){
 
   const [user, setUser] = useState({});
 
+  const [inputs, setInputs] = useState({
+    cardNumber: "",
+    cardDate: "",
+    cardCVC: "",
+    cardBalance:""
+  });
+
+  const HandleCardNumberInput = (e) => {
+    let value = e.target.value;
+
+    // Убираем все нецифры
+    value = value.replace(/\D/g, "");
+
+    // Ограничиваем длину 16 символами
+    value = value.substring(0, 16);
+
+    // Разбиваем по 4 цифры и вставляем "-"
+    value = value.replace(/(\d{4})(?=\d)/g, "$1-");
+
+    setInputs(prev => ({
+      ...prev,
+      cardNumber: value
+    }));
+  } 
+
+  const HandleCardDateInput = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // только цифры
+    value = value.substring(0, 4); // максимум 4 цифры (MMYY)
+
+    // Добавляем / после 2 цифр
+    if (value.length > 2) {
+      value = value.replace(/(\d{2})(\d{1,2})/, "$1/$2");
+    }
+
+    setInputs(prev => ({
+      ...prev,
+      cardDate: value
+    }));
+  };
+  const HandleCardCVCInput = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // только цифры
+    value = value.substring(0, 3); // максимум 3 цифры
+    setInputs(prev => ({
+      ...prev,
+      cardCVC: value
+    }));
+  };
+
+  const HandleCardBalanceInput = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // убираем всё, кроме цифр
+    value = value.substring(0, 10); // ограничиваем длину до 10 цифр
+
+    // форматируем с пробелами для читаемости (например: 100 000)
+    value = value.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+    setInputs(prev => ({
+      ...prev,
+      cardBalance: value 
+    }));
+  };
+
+  
   useEffect(()=>{
     const fetchUser = async()=>{
       const user = await GetUserApi();
@@ -25,22 +89,56 @@ export function CreateCardForm(){
     fetchUser();
   });
 
+
+  const StylesForCardDateAndCVC = {
+    "width" : "105px", 
+    "font-size" : "14px",
+    "color" : "#2b2b2b",
+    "display" : "flex",
+    "justify-content" : "center"
+  }
+
+  const HandleCreateCardForm = async (e) =>{
+    e.preventDefault();
+
+    if (inputs.cardNumber === "" || inputs.cardDate === "" || inputs.cardCVC === "" || inputs.cardBalance === ""){
+      alert("Заполните все поля");
+    }
+    else{
+      const card = await CreateCardApi(new Card(user.id, "Зарплатная карта", `${inputs.cardNumber}|${inputs.cardDate}|${inputs.cardCVC}`, parseFloat(inputs.cardBalance)));
+      if(card !== null){
+        navigate("/cards");
+      }
+      else{
+        alert("Ошибка добавления карты");
+      }
+    }
+  }
+
   return(
-    <form className={styles.create_card_form}>
+    <form onSubmit={HandleCreateCardForm} className={styles.create_card_form}>
       <div className={styles.create_card_content} >
         <h2>Finance Manager Card</h2>
         <div className={styles.create_card_number}>
-          <Input style={{"width" : "100%"}} placeholder="0000 0000 0000 0000"/>
+          <Input onChange={HandleCardNumberInput} value={inputs.cardNumber} style={{
+            "width" : "100%", 
+            "color" : "#ff8000ff", 
+            "font-weight" : "bold",
+            "font-size" : "20px"
+            }} placeholder="0000-0000-0000-0000"/>
         </div>
-        <div className={styles.create_card_date_and_cvc}>
-          <Input style={{"width" : "100px"}} placeholder="00/00"/>
-          <Input style={{"width" : "100px"}} placeholder="000"/>
+        <div className={styles.create_card_date_and_cvc_and_balance}>
+          <Input onChange={HandleCardCVCInput} value={inputs.cardCVC} style={StylesForCardDateAndCVC} placeholder="000"/>
+          <Input onChange={HandleCardDateInput} value={inputs.cardDate} style={StylesForCardDateAndCVC} placeholder="00/00"/>
+          <span>руб.</span>
+          <Input onChange={HandleCardBalanceInput} value={inputs.cardBalance} style={{
+            "width" : "160px"}}  placeholder="Баланс"/>
           <p>{user.lastName} {user.firstName}</p>
         </div>
       </div>
       <div className={styles.create_card_button}>
-        <Button>Создать карту</Button>
-        <Button onClick={()=> navigate("/cards")} style={{"background" : "#ffa143ff"}}>Отмена</Button>
+        <Button type="submit">Создать карту</Button>
+        <Button type="button" onClick={()=> navigate("/cards")} style={{"background" : "#ffa143ff"}}>Отмена</Button>
       </div>
     </form>
   );

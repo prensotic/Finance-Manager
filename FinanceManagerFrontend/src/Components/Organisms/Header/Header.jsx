@@ -3,6 +3,7 @@ import { Button } from "../../Atoms/Button/Button.jsx";
 import { useState, useEffect } from "react";
 import {HeaderNavigation} from "../../Moleculs/HeaderNavigation/HeaderNavigation.jsx";
 import {useNavigate} from "react-router-dom";
+import { Logo } from "../../Atoms/Logo/Logo.jsx";
 
 export function Header() {
   const [token, setToken] = useState(sessionStorage.getItem("finance_manager_token"));
@@ -19,7 +20,7 @@ export function Header() {
   return(
     <header className={styles.header}>
       <div className={styles.header_content}>
-        <h2 className={styles.header_title}>Finance Manager</h2>
+        <Logo />
         <HeaderNavigation />
         <div>
           {token ? <Button onClick={() => navigate("/profile")}>Профиль</Button> : <Button onClick={()=> navigate("/auth/login")}>Войти</Button>}

@@ -1,7 +1,12 @@
 export async function CreateTransactionApi(cardId, transactionId, transaction){
+  const token = sessionStorage.getItem("finance_manager_token");
   const response = await fetch(`/api/cards/${cardId}/transactions/${transactionId}`, {
     method: "PUT",
-    headers: {"Accept" : "application/json", "Content-Type" : "application/json"},
+    headers: {
+      "Accept" : "application/json", 
+      "Content-Type" : "application/json",
+      "Authorization" : "Bearer " + token
+    },
     body: JSON.stringify(transaction)
   });
 

@@ -1,4 +1,5 @@
 export async function EditUserApi(user){
+  const token = sessionStorage.getItem("finance_manager_token");
   const response = await fetch("/api/user/me", {
     method: "PUT",
     headers: {

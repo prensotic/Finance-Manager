@@ -1,6 +1,5 @@
 export class Card{
-  constructor(id, userId, typeCard, number, balance){
-    this.Id = id;
+  constructor(userId, typeCard, number, balance){
     this.UserId = userId;
     this.TypeCard = typeCard;
     this.Number = number;
