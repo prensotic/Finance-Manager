@@ -1,0 +1,12 @@
+.add_card_button{
+  background: #ecffdf;
+  height: 220px;
+  width: 440px;
+  border-radius: 10px;
+  border: 1px solid #8ef747;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #43a700;
+  cursor: pointer;
+}

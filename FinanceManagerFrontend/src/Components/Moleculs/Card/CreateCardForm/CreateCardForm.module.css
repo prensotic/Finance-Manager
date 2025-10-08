@@ -1,7 +1,8 @@
 .create_card_form{
+  position: relative;
   margin: 0 auto;
   width: 600px;
-  margin-top: 200px;
+  top: 200px;
 }
 
 .create_card_content{
@@ -33,3 +34,24 @@
   margin-top: 20px;
 }
 
+.types_cards{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.type_card_is_active{
+  background:#ff8000ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.type_card{
+  cursor: pointer;
+  background:#c0c0c0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}

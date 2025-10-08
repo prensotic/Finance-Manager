@@ -1,0 +1,24 @@
+.card_template{
+  background: #ecffdf;
+  height: 220px;
+  width: 440px;
+  border-radius: 10px;
+  border: 1px solid #8ef747;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card_template_buttons{
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-between;
+}
+
+.card_number{
+  background: #ff8000ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}

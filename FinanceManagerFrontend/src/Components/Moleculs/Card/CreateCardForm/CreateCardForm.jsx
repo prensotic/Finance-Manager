@@ -17,6 +17,7 @@ export function CreateCardForm(){
     cardNumber: "",
     cardDate: "",
     cardCVC: "",
+    cardType: "Зарплатная карта",
     cardBalance:""
   });
 
@@ -74,6 +75,12 @@ export function CreateCardForm(){
     }));
   };
 
+  const HandleCardTypeToggle = (type) =>{
+    setInputs(prev => ({
+      ...prev, 
+      cardType: type
+    }));
+  }
   
   useEffect(()=>{
     const fetchUser = async()=>{
@@ -92,10 +99,10 @@ export function CreateCardForm(){
 
   const StylesForCardDateAndCVC = {
     "width" : "105px", 
-    "font-size" : "14px",
+    "fontSize" : "14px",
     "color" : "#2b2b2b",
     "display" : "flex",
-    "justify-content" : "center"
+    "justifyContent" : "center"
   }
 
   const HandleCreateCardForm = async (e) =>{
@@ -105,9 +112,9 @@ export function CreateCardForm(){
       alert("Заполните все поля");
     }
     else{
-      const card = await CreateCardApi(new Card(user.id, "Зарплатная карта", `${inputs.cardNumber}|${inputs.cardDate}|${inputs.cardCVC}`, parseFloat(inputs.cardBalance)));
+      const card = await CreateCardApi(new Card(user.id, inputs.cardType, `${inputs.cardNumber}|${inputs.cardDate}|${inputs.cardCVC}`, parseFloat(inputs.cardBalance.replace(/\s/g, ""))));
       if(card !== null){
-        navigate("/cards");
+        navigate("/dashboard/cards");
       }
       else{
         alert("Ошибка добавления карты");
@@ -123,8 +130,8 @@ export function CreateCardForm(){
           <Input onChange={HandleCardNumberInput} value={inputs.cardNumber} style={{
             "width" : "100%", 
             "color" : "#ff8000ff", 
-            "font-weight" : "bold",
-            "font-size" : "20px"
+            "fontWeight" : "bold",
+            "fontSize" : "20px"
             }} placeholder="0000-0000-0000-0000"/>
         </div>
         <div className={styles.create_card_date_and_cvc_and_balance}>
@@ -135,10 +142,15 @@ export function CreateCardForm(){
             "width" : "160px"}}  placeholder="Баланс"/>
           <p>{user.lastName} {user.firstName}</p>
         </div>
+        <div className={styles.types_cards}>
+        <span onClick={()=>HandleCardTypeToggle("Зарплатная карта")} className={inputs.cardType == "Зарплатная карта" ? styles.type_card_is_active : styles.type_card}>Зарплатная карта</span>
+        <span onClick={()=>HandleCardTypeToggle("Дебетовая карта")} className={inputs.cardType == "Дебетовая карта" ? styles.type_card_is_active : styles.type_card}>Дебетовая карта</span>
+        <span onClick={()=>HandleCardTypeToggle("Кредитная карта")} className={inputs.cardType == "Кредитная карта" ? styles.type_card_is_active : styles.type_card}>Кредитная карта</span>
+      </div>
       </div>
       <div className={styles.create_card_button}>
         <Button type="submit">Создать карту</Button>
-        <Button type="button" onClick={()=> navigate("/cards")} style={{"background" : "#ffa143ff"}}>Отмена</Button>
+        <Button type="button" onClick={()=> navigate("/dashboard/cards")} style={{"background" : "#ffa143ff"}}>Отмена</Button>
       </div>
     </form>
   );

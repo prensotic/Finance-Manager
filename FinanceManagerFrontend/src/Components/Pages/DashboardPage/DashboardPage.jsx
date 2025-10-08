@@ -26,7 +26,7 @@ export function DashboardPage(){
 
   return( 
     <DashboardLayout>
-        {dashId == "cards" && <CardsList cards={cards}/>}
+        {dashId == "cards" && <CardsList setCards={setCards} cards={cards}/>}
     </DashboardLayout>
   );
 }
