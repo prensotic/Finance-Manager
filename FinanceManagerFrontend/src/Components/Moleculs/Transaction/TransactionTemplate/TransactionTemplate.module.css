@@ -1,4 +1,45 @@
 .transaction_template{
-  display: flex;
+  display: grid;
+  grid-template-columns: 25% 15% 15% 15% 20%;
   gap: 10px;
+  justify-content: space-between;
+  background: #ecffdf;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #8ef747;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.transaction_template:hover{
+  transform: scale(1.05);
+}
+
+.transaction_amount{
+  display: flex;
+  align-items : center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.transaction_date{
+  display: flex;
+  align-items : center;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+.transaction_button{
+  display: flex; 
+  gap: 20px;
+  width: 100%;
+  justify-content: right;
+}
+
+.transaction_card_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

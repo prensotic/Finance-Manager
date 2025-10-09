@@ -1,4 +1,4 @@
-export async function CreateTransactionApi(cardId, transactionId, transaction){
+export async function EditTransactionApi(cardId, transactionId, transaction){
   const token = sessionStorage.getItem("finance_manager_token");
   const response = await fetch(`/api/cards/${cardId}/transactions/${transactionId}`, {
     method: "PUT",

@@ -2,4 +2,6 @@
   font-size: 24px;
   font-weight: bold;
   color: #ff8000ff;
+  display: flex;
+  align-items: center;
 }

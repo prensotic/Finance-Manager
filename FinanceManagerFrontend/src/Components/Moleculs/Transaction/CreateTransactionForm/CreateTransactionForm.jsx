@@ -26,7 +26,7 @@ export function CreateTransactionForm(){
         setCards(cards);
         setInputs(prev => ({
           ...prev,
-          selectedCardId: cards[0].id
+          selectedCardId: cards[0].id,
         }));
       }
       else{
@@ -66,9 +66,15 @@ export function CreateTransactionForm(){
 
   const HandleCreateTransactionFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("cardId:", inputs.selectedCardId);
+
+    let preparedSum = parseInt(inputs.sum.replace(/\s/g, ""), 10);
+
+    if (inputs.category === "Перевод" || inputs.category === "Оплата товаров и услуг") {
+      preparedSum = -Math.abs(preparedSum);
+    }
+
     if(inputs.sum !== ""){
-      const transaction = await CreateTransactionApi(inputs.selectedCardId, new Transaction(inputs.selectedCardId, inputs.category, parseInt(inputs.sum.replace(/\s/g, ""), 10)));
+      const transaction = await CreateTransactionApi(inputs.selectedCardId, new Transaction(inputs.selectedCardId, inputs.category, preparedSum));
       console.log(transaction)
       if(transaction !== null) {
         navigate("/dashboard/transactions");

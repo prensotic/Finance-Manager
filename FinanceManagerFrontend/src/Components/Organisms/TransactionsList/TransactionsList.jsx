@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./TransactionsList.module.css"
 import { Button } from "../../Atoms/Button/Button";
 import {TransactionTemplate} from "../../Moleculs/Transaction/TransactionTemplate/TransactionTemplate";
+import { AddTransactionButton } from "../../Atoms/AddTransactionButton/AddTransactionButton";
 
 export function TransactionsList({transactions, setTransactions}){
   
@@ -19,7 +20,10 @@ export function TransactionsList({transactions, setTransactions}){
             <Button onClick={() => navigate("/dashboard/transactions/create")}>Добавить транзакцию</Button>
             <Button style={{"background" : "#ffa143ff"}} onClick={() => navigate("/profile")}>Вернуться в профиль</Button>
           </div>}
-        {transactions.length !== 0 && transactions.map(transaction => <TransactionTemplate key={transaction.id} transaction={transaction} onDelete={handleDelete}/>)}
+        {transactions.length !== 0 && <div className={styles.transactions_list}>
+          {transactions.map(transaction => <TransactionTemplate onClick={()=>navigate(`/dashboard/transactions/edit/${transaction.cardId}/${transaction.id}`)} key={transaction.id} transaction={transaction} onDelete={handleDelete}/>)}  
+          <AddTransactionButton />  
+        </div>}
       </div>
     </section>
   );

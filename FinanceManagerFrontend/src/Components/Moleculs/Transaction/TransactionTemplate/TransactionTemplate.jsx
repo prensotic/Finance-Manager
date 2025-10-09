@@ -5,7 +5,7 @@ import { GetCardByIdApi } from "../../../../Api/Cards/GetCardByIdApi";
 import { useEffect, useState } from "react";
 import {DeleteTransactionApi} from "../../../../Api/Transactions/DeleteTransactionApi";
 
-export function TransactionTemplate({ transaction, onDelete }) {
+export function TransactionTemplate({ transaction, onDelete, ...props }) {
   const [card, setCard] = useState(null);
 
   const HandleDeleteButtonClick = async () =>{
@@ -29,11 +29,11 @@ export function TransactionTemplate({ transaction, onDelete }) {
   }, [transaction.cardId]); 
 
   return (
-    <div className={styles.transaction_template}>
+    <div {...props} className={styles.transaction_template}>
       <Title>{transaction.category}</Title>
-      <span>{transaction.amount}</span>
-      <p>{transaction.date}</p>
-      <div>
+      <span className={styles.transaction_amount}>{transaction.amount >= 0 ? `+${transaction.amount}` : `${transaction.amount}`} руб.</span>
+      <p className={styles.transaction_date}>{new Date(transaction.date).toLocaleString('ru-RU')}</p>
+      <div className={styles.transaction_card_info}>
         {card && card.number ? (
           <>
             <p>{card.number.split("|")[0]}</p>
@@ -43,8 +43,7 @@ export function TransactionTemplate({ transaction, onDelete }) {
           <p>Загрузка карты...</p>
         )}
       </div>
-      <div>
-        <Button type="button">Редактировать</Button>
+      <div className={styles.transaction_button}>
         <Button type="button" onClick={HandleDeleteButtonClick}>Удалить</Button>
       </div>
     </div>

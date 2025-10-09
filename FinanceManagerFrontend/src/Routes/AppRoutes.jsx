@@ -6,6 +6,8 @@ import {CreateCardPage} from "../Components/Pages/CreateCardPage/CreateCardPage.
 import {DashboardPage} from "../Components/Pages/DashboardPage/DashboardPage.jsx";
 import { EditCardPage } from "../Components/Pages/EditCardPage/EditCardPage.jsx";
 import {CreateTransactionPage} from "../Components/Pages/CreateTransactionPage/CreateTransactionPage.jsx";
+import {EditTransactionPage} from "../Components/Pages/EditTransactionPage/EditTransactionPage.jsx";
+
 
 export function AppRoutes(){
   return(
@@ -16,7 +18,8 @@ export function AppRoutes(){
       <Route path="/dashboard/:dashId" element ={<DashboardPage />}/>
       <Route path="/dashboard/cards/create" element={<CreateCardPage />}/>
       <Route path="/dashboard/cards/edit/:cardId" element={<EditCardPage />}/>
-      <Route path="dashboard/transactions/create" element={<CreateTransactionPage />}/>
+      <Route path="/dashboard/transactions/create" element={<CreateTransactionPage />}/>
+      <Route path="/dashboard/transactions/edit/:cardId/:transactionId" element={<EditTransactionPage />}/>
     </Routes>
   );
 } 

@@ -1,0 +1,20 @@
+.add_transaction_button{
+  position: fixed;
+  height: 120px;
+  width: 120px;
+  background: #ecffdf;
+  border-radius: 50%;
+  border: 1px solid #8ef747;
+  bottom: 50px;
+  right: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.add_transaction_button:hover{
+  opacity: 0.5;
+}
