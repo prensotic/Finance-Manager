@@ -6,7 +6,28 @@ import { GetTransactionsApi } from "../../../Api/Transactions/GetTransactionsApi
 import { DashboardLayout } from "../../Templates/DashboardLayout/DashboardLayout.jsx";
 import { useParams } from "react-router-dom";
 
+
+
+
 export function DashboardPage(){
+
+  async function GetAllTransactionsByUserCards() {
+    const cards = await GetCardsApi();
+    if (!cards || cards.length === 0) return [];
+
+    // Получаем массив промисов по всем картам
+    const transactionPromises = cards.map(card => GetTransactionsApi(card.id));
+
+    // Дожидаемся всех запросов
+    const transactionsArray = await Promise.all(transactionPromises);
+
+    // Фильтруем null и объединяем все в один массив
+    const allTransactions = transactionsArray
+      .filter(arr => arr !== null)
+      .flat();
+
+    return allTransactions;
+  }
 
   const {dashId} = useParams();
 
@@ -27,16 +48,11 @@ export function DashboardPage(){
     fetchCards();
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     const fetchTransactions = async () => {
-      const transactions = await GetTransactionsApi();
-      if(transactions !== null){
-        setTransactions(transactions);
-      }
-      else{
-        console.log("Список транзакций пуст")
-      }
-    }
+      const allTransactions = await GetAllTransactionsByUserCards();
+      if (allTransactions) setTransactions(allTransactions);
+    };
     fetchTransactions();
   }, []);
 

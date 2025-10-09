@@ -21,7 +21,7 @@ export function CardsList({cards, setCards}){
                 <Button style={{"background" : "#ffa143ff"}} onClick={() => navigate("/profile")}>Вернуться в профиль</Button>
               </div> : <div className={styles.card_list}>
                   {cards.map(card => <CardTemplate onDelete={handleDelete} card={card} key={card.id}/>)}
-                  <AddCardButton onClick={()=>navigate("/cards/create")}/>
+                  <AddCardButton onClick={()=>navigate("/dashboard/cards/create")}/>
                 </div>}
         </div>
     </section>

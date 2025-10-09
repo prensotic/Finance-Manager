@@ -1,0 +1,56 @@
+.create_transaction_form{
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  background: #ecffdf;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #8ef747;
+  gap: 20px;
+}
+
+.create_transaction_form_category{
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+}
+
+select{
+  height: 40px;
+  padding: 10px;
+  background: #4e8629;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: rgb(255, 247, 0);
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+option{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.create_transaction_form_category_select{
+  width: 49%;
+}
+
+.create_transaction_form_cards_select{
+  width: 49%;
+}
+
+.create_transaction_form_buttons{
+  display: grid;
+  grid-template-columns: 49% 49%;
+  justify-content: space-between;
+}
+
+.create_transaction_form_sum_card{
+  display: flex;
+  justify-content: space-between;
+}

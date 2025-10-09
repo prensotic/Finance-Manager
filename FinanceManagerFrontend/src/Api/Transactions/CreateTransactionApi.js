@@ -4,7 +4,7 @@ export async function CreateTransactionApi(cardId, transaction){
     method: "POST",
     headers: {
       "Accept" : "application/json", 
-      "Content-Type" : "applications/json",
+      "Content-Type" : "application/json",
       "Authorization" : "Bearer " + token
     },
     body: JSON.stringify(transaction)

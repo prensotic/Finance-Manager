@@ -1,4 +1,4 @@
-export async function EditCardApi(cardId, transactionId){
+export async function DeleteTransactionApi(cardId, transactionId){
   const token = sessionStorage.getItem("finance_manager_token");
   const response = await fetch(`/api/cards/${cardId}/transactions/${transactionId}`, {
     method: "DELETE",

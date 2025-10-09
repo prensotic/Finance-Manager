@@ -1,6 +1,8 @@
+import styles from "./CardLayout.module.css"
+
 export function CardLayout({children}){
   return(
-    <section>
+    <section className={styles.create_card_section}>
       {children}
     </section>
   );
