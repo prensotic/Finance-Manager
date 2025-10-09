@@ -105,7 +105,7 @@ export function CreateCardForm(){
     "justifyContent" : "center"
   }
 
-  const HandleCreateCardForm = async (e) =>{
+  const HandleCreateCardFormSubmit = async (e) =>{
     e.preventDefault();
 
     if (inputs.cardNumber === "" || inputs.cardDate === "" || inputs.cardCVC === "" || inputs.cardBalance === ""){
@@ -122,8 +122,9 @@ export function CreateCardForm(){
     }
   }
 
+
   return(
-    <form onSubmit={HandleCreateCardForm} className={styles.create_card_form}>
+    <form onSubmit={HandleCreateCardFormSubmit} className={styles.create_card_form}>
       <div className={styles.create_card_content} >
         <h2>Finance Manager Card</h2>
         <div className={styles.create_card_number}>

@@ -4,6 +4,7 @@ import { HomePage } from "../Components/Pages/HomePage/HomePage";
 import { ProfilePage } from "../Components/Pages/ProfilePage/ProfilePage";
 import {CreateCardPage} from "../Components/Pages/CreateCardPage/CreateCardPage.jsx"
 import {DashboardPage} from "../Components/Pages/DashboardPage/DashboardPage.jsx";
+import { EditCardPage } from "../Components/Pages/EditCardPage/EditCardPage.jsx";
 
 export function AppRoutes(){
   return(
@@ -12,7 +13,8 @@ export function AppRoutes(){
       <Route path="/auth/:id" element={<AuthPage/>}/>
       <Route path="/profile" element={<ProfilePage/>}/>
       <Route path="/dashboard/:dashId" element ={<DashboardPage />}/>
-      <Route path="/cards/create" element={<CreateCardPage />}/>
+      <Route path="/dashboard/cards/create" element={<CreateCardPage />}/>
+      <Route path="/dashboard/cards/edit/:cardId" element={<EditCardPage />}/>
     </Routes>
   );
 } 

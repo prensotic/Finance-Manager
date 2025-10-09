@@ -38,6 +38,7 @@ namespace FinanceManagerBackend.Services.CardService
 
             card.TypeCard = updated.TypeCard;
             card.Number = updated.Number;
+            card.Balance = updated.Balance;
 
             return await _repo.UpdateCardAsync(card);
         }

@@ -2,8 +2,11 @@ import styles from "./CardTemplate.module.css";
 import { Title } from "../../../Atoms/Title/Title";
 import { Button } from "../../../Atoms/Button/Button";
 import {DeleteCard} from "../../../../Api/Cards/DeleteCardApi.js";
+import { useNavigate } from "react-router-dom";
 
 export function CardTemplate({card, onDelete}){
+
+  const navigate = useNavigate();
 
   const HandleDeleteButtonClick = async() => {
     const result = await DeleteCard(card.id);
@@ -20,7 +23,7 @@ export function CardTemplate({card, onDelete}){
         <span>Текущий баланс: {card.balance} руб.</span>
       </div>
       <div className={styles.card_template_buttons}>
-        <Button type="button">Редактировать</Button>
+        <Button type="button" onClick={()=> navigate(`/dashboard/cards/edit/${card.id}`)}>Редактировать</Button>
         <Button type="button" onClick={HandleDeleteButtonClick}>Удалить</Button>
       </div>
     </div>

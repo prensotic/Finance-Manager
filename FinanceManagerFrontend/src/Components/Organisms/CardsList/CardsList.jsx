@@ -17,7 +17,7 @@ export function CardsList({cards, setCards}){
         <div className={styles.cards_list_content}>
           {cards.length === 0 ? <div className={styles.cards_list_empty_content}>
                 <h1>Здесь пока пусто :(</h1>
-                <Button onClick={() => navigate("/cards/create")}>Добавить карту</Button>
+                <Button onClick={() => navigate("/dashboard/cards/create")}>Добавить карту</Button>
                 <Button style={{"background" : "#ffa143ff"}} onClick={() => navigate("/profile")}>Вернуться в профиль</Button>
               </div> : <div className={styles.card_list}>
                   {cards.map(card => <CardTemplate onDelete={handleDelete} card={card} key={card.id}/>)}

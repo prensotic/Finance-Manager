@@ -1,0 +1,9 @@
+.transactions_list_empty_content{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  gap: 20px;
+  margin: 0 auto;
+  margin-top: 300px;
+}
