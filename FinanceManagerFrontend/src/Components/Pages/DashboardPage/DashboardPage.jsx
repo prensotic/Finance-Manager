@@ -5,6 +5,7 @@ import {GetCardsApi} from "../../../Api/Cards/GetCardsApi.js";
 import { GetTransactionsApi } from "../../../Api/Transactions/GetTransactionsApi.js";
 import { DashboardLayout } from "../../Templates/DashboardLayout/DashboardLayout.jsx";
 import { useParams } from "react-router-dom";
+import {TransactionStatistics} from "../../Organisms/TransactionStatistics/TransactionStatistics.jsx";
 
 
 
@@ -60,6 +61,7 @@ export function DashboardPage(){
     <DashboardLayout>
         {dashId == "cards" && <CardsList setCards={setCards} cards={cards}/>}
         {dashId == "transactions" && <TransactionsList transactions={transactions} setTransactions={setTransactions}/>}
+        {dashId == "statistics" && <TransactionStatistics/>}
     </DashboardLayout>
   );
 }
